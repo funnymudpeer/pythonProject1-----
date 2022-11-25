@@ -18,7 +18,7 @@ class Model(Module):
         self.G[0, :, :, :] = torch.cat([G, zero, zero], dim=0)
         self.G[1, :, :, :] = torch.cat([zero, G, zero], dim=0)
         self.G[2, :, :, :] = torch.cat([zero, zero, G], dim=0)
-        self.ori = nn.Parameter(torch.zeros((1, 3, 480, 720)), requires_grad=True)
+        self.ori = nn.Parameter(torch.ones((1, 3, 480, 720))*0.5, requires_grad=True)
 
     def forward(self):
         # print(self.my_ori.data.shape, self.G.shape)
