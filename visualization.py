@@ -7,7 +7,7 @@ result = torch.squeeze(torch.load('./tensor.pt')).to('cpu').detach().numpy().tra
 result = np.uint8(np.clip(result * 255, 0, 255))
 cv2.imshow('result', result)
 cv2.waitKey()
-# result = cv2.cvtColor(result,cv2.COLOR_BGR2RGB)
+
 cv2.imwrite('result.png', result)
 
 
